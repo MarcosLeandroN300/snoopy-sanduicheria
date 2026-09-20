@@ -552,6 +552,8 @@ a {
 ========================================================= */
 
 .bite-burger {
+    display: none;
+
     position: absolute;
 
     width: 180px;
@@ -601,7 +603,7 @@ a {
 
     opacity: 0;
 
-    animation: nhac 4.8s infinite;
+    animation: nhacBounce 4.8s ease-in-out infinite;
 
     z-index: 7;
 
@@ -699,6 +701,8 @@ a {
 
 .hero-glow {
     position: absolute;
+
+    pointer-events: none;
 
     border-radius: 50%;
 
@@ -2989,4 +2993,233 @@ footer {
     .trust-card small {
         font-size: 10px;
     }
+}
+
+
+
+@keyframes nhacBounce {
+
+    0%,
+    54%,
+    100% {
+        opacity: 0;
+        transform: translateY(12px) rotate(-12deg) scale(.72);
+    }
+
+    55% {
+        opacity: 1;
+        transform: translateY(0) rotate(-12deg) scale(1);
+    }
+
+    61% {
+        opacity: 1;
+        transform: translateY(7px) rotate(-14deg) scale(.96);
+    }
+
+    66% {
+        opacity: 1;
+        transform: translateY(-2px) rotate(-10deg) scale(1.03);
+    }
+
+    72% {
+        opacity: 1;
+        transform: translateY(0) rotate(-12deg) scale(1);
+    }
+
+    82% {
+        opacity: 0;
+        transform: translateY(8px) rotate(-12deg) scale(.85);
+    }
+}
+/* =========================================================
+   CORREÇÃO FINAL — HERO MOBILE
+   Ordem: título → logo animada → texto → botões
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "logo"
+      "text"
+      "actions"
+      "proof";
+    gap: 0;
+    min-height: auto;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+  }
+
+  .hero-copy {
+    display: contents;
+  }
+
+  .hero-copy.reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-copy .eyebrow {
+    display: none;
+  }
+
+  .hero-copy h1 {
+    grid-area: title;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 12px;
+    position: relative;
+    z-index: 30;
+  }
+
+  .bite-stage {
+    grid-area: logo;
+    width: 100%;
+    min-height: 330px;
+    height: 330px;
+    margin: 0 auto 0;
+    transform: scale(.92);
+    transform-origin: center center;
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .bite-burger {
+    display: none;
+  }
+
+  .bite-word {
+    pointer-events: none;
+    animation: nhacBounce 4.8s ease-in-out infinite;
+  }
+
+  .hero-copy p {
+    grid-area: text;
+    width: 100%;
+    max-width: 520px;
+    margin: -4px auto 0;
+    text-align: center;
+    position: relative;
+    z-index: 30;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    grid-area: actions;
+    width: 100%;
+    max-width: 520px;
+    margin: 22px auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    position: relative;
+    z-index: 1000;
+    isolation: isolate;
+    pointer-events: auto;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1001;
+    pointer-events: auto;
+    touch-action: manipulation;
+    cursor: pointer;
+  }
+
+  .mini-proof {
+    grid-area: proof;
+    justify-content: center;
+    position: relative;
+    z-index: 30;
+    margin: 20px auto 0;
+  }
+
+  .stage-ring,
+  .mascot,
+  .bite-word,
+  .price-tag,
+  .speed,
+  .hero-glow {
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .hero-copy h1 {
+    font-size: 45px;
+    margin-bottom: 8px;
+  }
+
+  .bite-stage {
+    min-height: 290px;
+    height: 290px;
+    transform: scale(.84);
+    margin: -5px auto -5px;
+  }
+
+  .hero-copy p {
+    font-size: 14px;
+    margin-top: 0;
+  }
+
+  .hero-actions {
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+  }
+}
+
+/* =========================================================
+   CORREÇÃO — CARRINHO MOBILE
+   Permite rolar o carrinho inteiro para acessar o botão WhatsApp.
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .cart {
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cart-head {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #0c0c0c;
+  }
+
+  .cart-items {
+    flex: 0 0 auto;
+    overflow: visible;
+    min-height: 0;
+  }
+
+  .cart-bottom {
+    flex: 0 0 auto;
+    max-height: none;
+    overflow: visible;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+  }
+
+  .checkout {
+    position: relative;
+    z-index: 30;
+    margin-bottom: 0;
+  }
 }
