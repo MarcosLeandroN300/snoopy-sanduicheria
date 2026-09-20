@@ -1,0 +1,20 @@
+SNOOPY SANDUICHERIA — V2 PREMIUM
+
+Esta versão é um SITE FUNCIONAL, não uma imagem.
+Abra index.html no navegador ou no VS Code.
+
+Destaques:
+- Design premium preto/amarelo
+- Hero animado
+- Animação do mascote com efeito de mordida
+- Marquee animado
+- Cards com hover
+- Filtros de cardápio
+- Carrinho lateral
+- Quantidades, remoção e total
+- Entrega/retirada
+- Pagamento e troco
+- WhatsApp
+
+As fotos fornecidas foram reutilizadas como base.
+WhatsApp configurado: 5562994628096.

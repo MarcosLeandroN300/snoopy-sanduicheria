@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- =====================================================
+         CONFIGURAÇÕES BÁSICAS
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Snoopy Sanduicheria — sanduíches, batatas, bebidas e combos."
+    >
+
+    <title>Snoopy Sanduicheria | O sabor que marca</title>
+
+
+    <!-- =====================================================
+         FONTES
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         CSS PRINCIPAL
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         EFEITO DE TEXTURA
+    ====================================================== -->
+
+    <div class="noise"></div>
+
+
+    <!-- =====================================================
+         HEADER / MENU
+    ====================================================== -->
+
+    <header class="header">
+
+        <div class="wrap nav">
+
+            <!-- LOGO -->
+
+            <a
+                class="brand"
+                href="#inicio"
+            >
+                <img
+                    src="Imagens/logo.jpg"
+                    alt="Snoopy Sanduicheria"
+                >
+            </a>
+
+
+            <!-- MENU DESKTOP -->
+
+            <nav class="desktop-nav">
+
+                <a
+                    class="active"
+                    href="#inicio"
+                >
+                    Início
+                </a>
+
+                <a href="#cardapio">
+                    Cardápio
+                </a>
+
+                <a href="#combos">
+                    Combos
+                </a>
+
+                <a href="#sobre">
+                    Sobre
+                </a>
+
+            </nav>
+
+
+            <!-- BOTÃO DO CARRINHO -->
+
+            <button
+                class="cart-pill"
+                id="openCart"
+                type="button"
+            >
+
+                <span class="cart-icon">
+                    🛒
+                </span>
+
+                <span>
+                    Meu pedido
+                </span>
+
+                <b id="cartCount">
+                    0
+                </b>
+
+            </button>
+
+
+            <!-- MENU MOBILE -->
+
+            <button
+                class="menu-mobile"
+                id="mobileMenu"
+                type="button"
+            >
+                ☰
+            </button>
+
+        </div>
+
+
+        <!-- MENU MOBILE ABERTO -->
+
+        <div
+            class="mobile-nav"
+            id="mobileNav"
+        >
+
+            <a href="#inicio">
+                Início
+            </a>
+
+            <a href="#cardapio">
+                Cardápio
+            </a>
+
+            <a href="#combos">
+                Combos
+            </a>
+
+            <a href="#sobre">
+                Sobre
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section
+            class="hero"
+            id="inicio"
+        >
+
+            <div class="hero-glow glow-one"></div>
+
+            <div class="hero-glow glow-two"></div>
+
+
+            <div class="wrap hero-grid">
+
+
+                <!-- TEXTO DO HERO -->
+
+                <div class="hero-copy reveal">
+
+                    <div class="eyebrow">
+                        <i></i>
+                        SANDUÍCHES • BATATAS • BEBIDAS
+                    </div>
+
+
+                    <h1>
+                        O verdadeiro<br>
+                        <span>sabor</span>
+                        do seu dia.
+                    </h1>
+
+
+                    <p>
+                        Seu lanche favorito, do jeito que você gosta.
+                        Escolha, monte o pedido e mande direto pelo WhatsApp.
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a
+                            class="btn btn-yellow"
+                            href="#cardapio"
+                        >
+                            Ver cardápio
+                            <span>→</span>
+                        </a>
+
+
+                        <a
+                            class="btn btn-ghost"
+                            href="#combos"
+                        >
+                            Ver combos
+                        </a>
+
+                    </div>
+
+
+                    <div class="mini-proof">
+
+                        <div class="avatars">
+                            <span>★</span>
+                            <span>★</span>
+                            <span>★</span>
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Pedido rápido
+                            </strong>
+
+                            <small>
+                                Entrega grátis • Retirada no local
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ELEMENTO VISUAL DO HERO -->
+
+                <div class="bite-stage reveal">
+
+                    <div class="stage-ring"></div>
+
+                    <div class="speed speed-one"></div>
+
+                    <div class="speed speed-two"></div>
+
+                    <div class="speed speed-three"></div>
+
+
+                    <div class="mascot">
+
+                        <img
+                            src="Imagens/logo.jpg"
+                            alt="Snoopy segurando um hambúrguer"
+                        >
+
+                    </div>
+
+
+                    <div class="bite-burger">
+
+                        <img
+                            src="Imagens/produtos/xsalada.jpg"
+                            alt="X-Salada"
+                        >
+
+                    </div>
+
+
+                    <div class="bite-word">
+                        NHAC!
+                    </div>
+
+
+                    <div class="price-tag">
+
+                        <small>
+                            A PARTIR DE
+                        </small>
+
+                        <strong>
+                            R$ 18,90
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MARQUEE -->
+
+            <div class="hero-marquee">
+
+                <div class="marquee-track">
+
+                    <span>FEITO NA HORA</span>
+                    <b>✦</b>
+
+                    <span>SABOR DE VERDADE</span>
+                    <b>✦</b>
+
+                    <span>ENTREGA GRÁTIS</span>
+                    <b>✦</b>
+
+                    <span>PEÇA PELO WHATSAPP</span>
+                    <b>✦</b>
+
+                    <span>FEITO NA HORA</span>
+                    <b>✦</b>
+
+                    <span>SABOR DE VERDADE</span>
+                    <b>✦</b>
+
+                    <span>ENTREGA GRÁTIS</span>
+                    <b>✦</b>
+
+                    <span>PEÇA PELO WHATSAPP</span>
+                    <b>✦</b>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             BENEFÍCIOS
+        ================================================== -->
+
+        <section class="trust">
+
+            <div class="wrap trust-grid">
+
+
+                <div class="trust-card">
+
+                    <span>01</span>
+
+                    <div>
+
+                        <strong>
+                            Entrega grátis
+                        </strong>
+
+                        <small>
+                            Sem taxa de entrega
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="trust-card">
+
+                    <span>02</span>
+
+                    <div>
+
+                        <strong>
+                            Retirada no local
+                        </strong>
+
+                        <small>
+                            Você escolhe no pedido
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="trust-card">
+
+                    <span>03</span>
+
+                    <div>
+
+                        <strong>
+                            Pagamento fácil
+                        </strong>
+
+                        <small>
+                            Pix, cartão ou dinheiro
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="trust-card">
+
+                    <span>04</span>
+
+                    <div>
+
+                        <strong>
+                            WhatsApp
+                        </strong>
+
+                        <small>
+                            Pedido direto e rápido
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CATEGORIAS
+        ================================================== -->
+
+        <section
+            class="categories wrap reveal"
+            id="cardapio"
+        >
+
+            <div class="section-head">
+
+                <div>
+
+                    <div class="eyebrow">
+                        ESCOLHA SUA FOME
+                    </div>
+
+                    <h2>
+                        Cardápio em destaque
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Os favoritos da casa em um só lugar.
+                </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+
+                <!-- SANDUÍCHES -->
+
+                <button
+                    class="category-card active"
+                    data-filter="all"
+                    type="button"
+                >
+
+                    <span class="cat-number">
+                        01
+                    </span>
+
+                    <div
+                        class="cat-photo"
+                        style="background-image:url('Imagens/produtos/xsalada.jpg')"
+                    ></div>
+
+
+                    <div class="cat-copy">
+
+                        <small>
+                            CLÁSSICOS
+                        </small>
+
+                        <strong>
+                            Sanduíches
+                        </strong>
+
+                        <em>
+                            Ver opções →
+                        </em>
+
+                    </div>
+
+                </button>
+
+
+                <!-- BATATAS -->
+
+                <button
+                    class="category-card"
+                    data-filter="batatas"
+                    type="button"
+                >
+
+                    <span class="cat-number">
+                        02
+                    </span>
+
+                    <div
+                        class="cat-photo"
+                        style="background-image:url('Imagens/produtos/batata.jpg')"
+                    ></div>
+
+
+                    <div class="cat-copy">
+
+                        <small>
+                            ACOMPANHE
+                        </small>
+
+                        <strong>
+                            Batatas
+                        </strong>
+
+                        <em>
+                            Ver opções →
+                        </em>
+
+                    </div>
+
+                </button>
+
+
+                <!-- BEBIDAS -->
+
+                <button
+                    class="category-card"
+                    data-filter="bebidas"
+                    type="button"
+                >
+
+                    <span class="cat-number">
+                        03
+                    </span>
+
+                    <div
+                        class="cat-photo"
+                        style="background-image:url('Imagens/produtos/coca.jpg')"
+                    ></div>
+
+
+                    <div class="cat-copy">
+
+                        <small>
+                            GELADINHAS
+                        </small>
+
+                        <strong>
+                            Bebidas
+                        </strong>
+
+                        <em>
+                            Ver opções →
+                        </em>
+
+                    </div>
+
+                </button>
+
+
+                <!-- COMBOS -->
+
+                <button
+                    class="category-card"
+                    data-filter="combos"
+                    type="button"
+                >
+
+                    <span class="cat-number">
+                        04
+                    </span>
+
+                    <div
+                        class="cat-photo"
+                        style="background-image:url('Imagens/produtos/combo.jpg')"
+                    ></div>
+
+
+                    <div class="cat-copy">
+
+                        <small>
+                            MAIS PEDIDOS
+                        </small>
+
+                        <strong>
+                            Combos
+                        </strong>
+
+                        <em>
+                            Ver opções →
+                        </em>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CARDÁPIO / PRODUTOS
+        ================================================== -->
+
+        <section class="menu-section wrap reveal">
+
+            <div class="menu-title">
+
+                <div>
+
+                    <div class="eyebrow">
+                        MAIS PEDIDOS
+                    </div>
+
+                    <h2>
+                        Escolha e adicione.
+                    </h2>
+
+                </div>
+
+
+                <!-- FILTROS -->
+
+                <div class="filter-pills">
+
+                    <button
+                        class="filter active"
+                        data-filter="all"
+                        type="button"
+                    >
+                        Todos
+                    </button>
+
+                    <button
+                        class="filter"
+                        data-filter="sanduiches"
+                        type="button"
+                    >
+                        Sanduíches
+                    </button>
+
+                    <button
+                        class="filter"
+                        data-filter="batatas"
+                        type="button"
+                    >
+                        Batatas
+                    </button>
+
+                    <button
+                        class="filter"
+                        data-filter="bebidas"
+                        type="button"
+                    >
+                        Bebidas
+                    </button>
+
+                    <button
+                        class="filter"
+                        data-filter="combos"
+                        type="button"
+                    >
+                        Combos
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PRODUTOS
+            ================================================== -->
+
+            <div class="product-grid">
+
+
+                <!-- =================================================
+                     SANDUÍCHES
+                ================================================== -->
+
+
+                <!-- X-SALADA -->
+
+                <article
+                    class="product"
+                    data-cat="sanduiches"
+                    data-id="x-salada"
+                    data-name="X-Salada"
+                    data-price="18.90"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="Imagens/produtos/xsalada.jpg"
+                            alt="X-Salada"
+                        >
+
+                        <span class="badge">
+                            FAVORITO
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-body">
+
+                        <div>
+
+                            <h3>
+                                X-Salada
+                            </h3>
+
+                            <p>
+                                Hambúrguer, queijo, salada e molho.
+                            </p>
+
+                        </div>
+
+                        <strong>
+                            R$ 18,90
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="add"
+                        type="button"
+                    >
+                        Adicionar ao pedido
+                        <span>+</span>
+                    </button>
+
+                </article>
+
+
+                <!-- X-BACON -->
+
+                <article
+                    class="product"
+                    data-cat="sanduiches"
+                    data-id="x-bacon"
+                    data-name="X-Bacon"
+                    data-price="21.90"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="Imagens/produtos/xsalada.jpg"
+                            alt="X-Bacon"
+                        >
+
+                    </div>
+
+
+                    <div class="product-body">
+
+                        <div>
+
+                            <h3>
+                                X-Bacon
+                            </h3>
+
+                            <p>
+                                Hambúrguer, queijo, bacon e salada.
+                            </p>
+
+                        </div>
+
+                        <strong>
+                            R$ 21,90
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="add"
+                        type="button"
+                    >
+                        Adicionar ao pedido
+                        <span>+</span>
+                    </button>
+
+                </article>
+
+
+                <!-- X-TUDO -->
+
+                <article
+                    class="product"
+                    data-cat="sanduiches"
+                    data-id="x-tudo"
+                    data-name="X-Tudo"
+                    data-price="24.90"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="Imagens/produtos/combo.jpg"
+                            alt="X-Tudo"
+                        >
+
+                        <span class="badge">
+                            GRANDE
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-body">
+
+                        <div>
+
+                            <h3>
+                                X-Tudo
+                            </h3>
+
+                            <p>
+                                O sanduíche completo para matar a fome.
+                            </p>
+
+                        </div>
+
+                        <strong>
+                            R$ 24,90
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="add"
+                        type="button"
+                    >
+                        Adicionar ao pedido
+                        <span>+</span>
+                    </button>
+
+                </article>
+
+
+                <!-- =================================================
+                     BATATAS
+                ================================================== -->
+
+
+                <!-- BATATA P -->
+
+                <article
+                    class="product"
+                    data-cat="batatas"
+                    data-id="batata-p"
+                    data-name="Batata P"
+                    data-price="9.90"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="Imagens/produtos/batata.jpg"
+                            alt="Batata P"
+                        >
+
+                    </div>
+
+
+                    <div class="product-body">
+
+                        <div>
+
+                            <h3>
+                                Batata P
+                            </h3>
+
+                            <p>
+                                Crocante, dourada e perfeita para acompanhar.
+                            </p>
+
+                        </div>
+
+                        <strong>
+                            R$ 9,90
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="add"
+                        type="button"
+                    >
+                        Adicionar ao pedido
+                        <span>+</span>
+                    </button>
+
+                </article>
+
+
+                <!-- BATATA G -->
+
+                <article
+                    class="product"
+                    data-cat="batatas"
+                    data-id="batata-g"
+                    data-name="Batata G"
+                    data-price="14.90"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="Imagens/produtos/batata.jpg"
+                            alt="Batata G"
+                        >
+
+                    </div>
+
+
+                    <div class="product-body">
+
+                        <div>
+
+                            <h3>
+                                Batata G
+                            </h3>
+
+                            <p>
+                                Porção maior para compartilhar.
+                            </p>
+
+                        </div>
+
+                        <strong>
+                            R$ 14,90
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="add"
+                        type="button"
+                    >
+                        Adicionar ao pedido
+                        <span>+</span>
+                    </button>
+
+                </article>
+
+
+                <!-- =================================================
+                     BEBIDAS
+                ================================================== -->
+
+
+                <!-- COCA-COLA -->
+
+                <article
+                    class="product"
+                    data-cat="bebidas"
+                    data-id="coca"
+                    data-name="Coca-Cola"
+                    data-price="6.00"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="Imagens/produtos/coca.jpg"
+                            alt="Coca-Cola"
+                        >
+
+                        <span class="badge">
+                            350 ML
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-body">
+
+                        <div>
+
+                            <h3>
+                                Coca-Cola
+                            </h3>
+
+                            <p>
+                                Gelada para acompanhar seu lanche.
+                            </p>
+
+                        </div>
+
+                        <strong>
+                            R$ 6,00
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="add"
+                        type="button"
+                    >
+                        Adicionar ao pedido
+                        <span>+</span>
+                    </button>
+
+                </article>
+
+
+                <!-- GUARANÁ -->
+
+                <article
+                    class="product"
+                    data-cat="bebidas"
+                    data-id="guarana"
+                    data-name="Guaraná"
+                    data-price="6.00"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="Imagens/produtos/coca.jpg"
+                            alt="Guaraná"
+                        >
+
+                    </div>
+
+
+                    <div class="product-body">
+
+                        <div>
+
+                            <h3>
+                                Guaraná
+                            </h3>
+
+                            <p>
+                                Refrigerante gelado.
+                            </p>
+
+                        </div>
+
+                        <strong>
+                            R$ 6,00
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="add"
+                        type="button"
+                    >
+                        Adicionar ao pedido
+                        <span>+</span>
+                    </button>
+
+                </article>
+
+
+                <!-- =================================================
+                     COMBOS
+                ================================================== -->
+
+
+                <!-- COMBO X-TUDO -->
+
+                <article
+                    class="product"
+                    data-cat="combos"
+                    data-id="combo-x-tudo"
+                    data-name="Combo X-Tudo"
+                    data-price="35.90"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="Imagens/produtos/combo.jpg"
+                            alt="Combo X-Tudo"
+                        >
+
+                        <span class="badge">
+                            COMBO
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-body">
+
+                        <div>
+
+                            <h3>
+                                Combo X-Tudo
+                            </h3>
+
+                            <p>
+                                Sanduíche + batata + bebida.
+                            </p>
+
+                        </div>
+
+                        <strong>
+                            R$ 35,90
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="add"
+                        type="button"
+                    >
+                        Adicionar ao pedido
+                        <span>+</span>
+                    </button>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DESTAQUE DOS COMBOS
+        ================================================== -->
+
+        <section
+            class="combo-feature"
+            id="combos"
+        >
+
+            <div class="wrap combo-grid reveal">
+
+
+                <div class="combo-visual">
+
+                    <div class="combo-sticker">
+                        COMBO<br>
+                        <b>DA CASA</b>
+                    </div>
+
+
+                    <img
+                        src="Imagens/produtos/combo.jpg"
+                        alt="Combo da Snoopy"
+                    >
+
+
+                    <div class="floating-note">
+                        + BATATA<br>
+                        + BEBIDA
+                    </div>
+
+                </div>
+
+
+                <div class="combo-copy">
+
+                    <div class="eyebrow">
+                        QUANDO A FOME É GRANDE
+                    </div>
+
+
+                    <h2>
+                        Combo completo.<br>
+                        <span>Problema resolvido.</span>
+                    </h2>
+
+
+                    <p>
+                        Junte seu sanduíche com batata e bebida
+                        e transforme o pedido em uma experiência completa.
+                    </p>
+
+
+                    <button
+                        class="btn btn-yellow jump-combo"
+                        data-id="combo-x-tudo"
+                        type="button"
+                    >
+                        Quero meu combo
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SOBRE
+        ================================================== -->
+
+        <section
+            class="about wrap reveal"
+            id="sobre"
+        >
+
+            <div class="about-logo">
+
+                <img
+                    src="Imagens/logo.jpg"
+                    alt="Snoopy Sanduicheria"
+                >
+
+            </div>
+
+
+            <div>
+
+                <div class="eyebrow">
+                    A CARA DA CASA
+                </div>
+
+
+                <h2>
+                    Uma marca que dá<br>
+                    <span>vontade de pedir.</span>
+                </h2>
+
+
+                <p>
+                    O site foi pensado para transformar o cardápio
+                    em uma experiência: visual forte, pedido simples
+                    e contato direto com o comércio.
+                </p>
+
+            </div>
+
+
+            <div class="about-stat">
+
+                <strong>
+                    100%
+                </strong>
+
+                <small>
+                    pedido direto pelo WhatsApp
+                </small>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="wrap footer-grid">
+
+            <img
+                src="Imagens/logo.jpg"
+                alt="Snoopy Sanduicheria"
+            >
+
+
+            <div>
+
+                <strong>
+                    SNOOPY
+                </strong>
+
+                <span>
+                    SANDUICHERIA
+                </span>
+
+            </div>
+
+
+            <p>
+                Sabor, qualidade e tradição.
+            </p>
+
+
+            <a
+                href="https://wa.me/5562994628096"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                WhatsApp →
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         OVERLAY DO CARRINHO
+    ====================================================== -->
+
+    <div
+        class="overlay"
+        id="overlay"
+    ></div>
+
+
+    <!-- =====================================================
+         CARRINHO
+    ====================================================== -->
+
+    <aside
+        class="cart"
+        id="cart"
+    >
+
+
+        <!-- CABEÇALHO -->
+
+        <div class="cart-head">
+
+            <div>
+
+                <small>
+                    SEU PEDIDO
+                </small>
+
+                <h2>
+                    Meu carrinho
+                </h2>
+
+            </div>
+
+
+            <button
+                id="closeCart"
+                type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- PRODUTOS DO CARRINHO -->
+
+        <div
+            class="cart-items"
+            id="cartItems"
+        >
+
+            <div class="empty">
+
+                Seu carrinho está vazio.<br>
+
+                <span>
+                    Adicione algo gostoso.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             FINAL DO CARRINHO
+        ================================================== -->
+
+        <div class="cart-bottom">
+
+
+            <!-- TOTAL -->
+
+            <div class="cart-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="cartTotal">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+
+            <!-- DADOS DO CLIENTE -->
+
+            <div class="customer">
+
+                <h3>
+                    Dados do pedido
+                </h3>
+
+
+                <input
+                    id="name"
+                    type="text"
+                    placeholder="Seu nome"
+                >
+
+
+                <input
+                    id="phone"
+                    type="tel"
+                    placeholder="Seu telefone"
+                >
+
+
+                <select id="type">
+
+                    <option value="">
+                        Entrega ou retirada?
+                    </option>
+
+                    <option>
+                        Entrega
+                    </option>
+
+                    <option>
+                        Retirada no local
+                    </option>
+
+                </select>
+
+
+                <input
+                    id="address"
+                    type="text"
+                    placeholder="Endereço para entrega"
+                >
+
+
+                <select id="payment">
+
+                    <option value="">
+                        Forma de pagamento
+                    </option>
+
+                    <option>
+                        Pix
+                    </option>
+
+                    <option>
+                        Cartão
+                    </option>
+
+                    <option>
+                        Dinheiro
+                    </option>
+
+                </select>
+
+
+                <input
+                    id="cash"
+                    type="text"
+                    placeholder="Valor para troco"
+                    hidden
+                >
+
+
+                <textarea
+                    id="obs"
+                    placeholder="Observação (opcional)"
+                ></textarea>
+
+            </div>
+
+
+            <!-- FINALIZAR PEDIDO -->
+
+            <button
+                class="checkout"
+                id="checkout"
+                type="button"
+            >
+                Finalizar pelo WhatsApp
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         TOAST / AVISO
+    ====================================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+        Adicionado ao pedido
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT PRINCIPAL
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

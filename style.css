@@ -1,0 +1,2992 @@
+/* =========================================================
+   IMPORTAÇÃO DE FONTES
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700;800;900&display=swap');
+
+
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
+:root {
+    --yellow: #ffd400;
+    --yellow2: #ffb800;
+
+    --black: #060606;
+
+    --panel: #101010;
+    --panel2: #151515;
+
+    --line: #292929;
+
+    --white: #f8f8f4;
+    --muted: #a6a6a1;
+
+    --green: #20d46b;
+}
+
+
+/* =========================================================
+   RESET / CONFIGURAÇÕES GERAIS
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+
+    font-family: 'DM Sans', Arial, sans-serif;
+
+    overflow-x: hidden;
+}
+
+body.lock {
+    overflow: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.wrap {
+    width: min(1240px, 92%);
+    margin: auto;
+}
+
+
+/* =========================================================
+   EFEITO DE RUÍDO
+========================================================= */
+
+.noise {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .035;
+
+    z-index: 100;
+
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+
+    z-index: 50;
+
+    background: rgba(6, 6, 6, .86);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(255, 212, 0, .22);
+}
+
+.nav {
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 38px;
+}
+
+.brand {
+    width: 76px;
+    height: 76px;
+
+    flex: 0 0 auto;
+
+    margin-top: 20px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 3px solid var(--yellow);
+
+    box-shadow: 0 0 30px rgba(255, 212, 0, .18);
+}
+
+.brand img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   MENU DESKTOP
+========================================================= */
+
+.desktop-nav {
+    display: flex;
+
+    gap: 30px;
+
+    flex: 1;
+
+    justify-content: center;
+}
+
+.desktop-nav a {
+    color: #aaa;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    position: relative;
+
+    padding: 29px 0;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+    color: #fff;
+}
+
+.desktop-nav a.active:after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 18px;
+
+    height: 2px;
+
+    background: var(--yellow);
+
+    box-shadow: 0 0 12px var(--yellow);
+}
+
+
+/* =========================================================
+   CARRINHO DO HEADER
+========================================================= */
+
+.cart-pill {
+    border: 0;
+
+    background: var(--yellow);
+    color: #101010;
+
+    border-radius: 999px;
+
+    padding: 11px 14px 11px 16px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    font-weight: 900;
+
+    box-shadow: 0 8px 30px rgba(255, 212, 0, .16);
+}
+
+.cart-pill b {
+    background: #111;
+    color: var(--yellow);
+
+    min-width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MENU MOBILE
+========================================================= */
+
+.menu-mobile,
+.mobile-nav {
+    display: none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 680px;
+
+    overflow: hidden;
+
+    padding: 90px 0 0;
+
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            #302600 0,
+            #101008 27%,
+            #060606 63%
+        );
+}
+
+.hero:before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            125deg,
+            transparent 35%,
+            rgba(255, 212, 0, .045) 35.2%,
+            transparent 35.5%
+        );
+
+    pointer-events: none;
+}
+
+.hero-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1.05fr;
+
+    align-items: center;
+
+    gap: 40px;
+
+    min-height: 520px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+    font-size: 12px;
+
+    letter-spacing: 2.5px;
+
+    color: var(--yellow);
+
+    font-weight: 900;
+}
+
+.eyebrow i {
+    display: inline-block;
+
+    width: 28px;
+    height: 3px;
+
+    background: var(--yellow);
+
+    vertical-align: middle;
+
+    margin-right: 8px;
+}
+
+
+/* =========================================================
+   TÍTULO DO HERO
+========================================================= */
+
+.hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    text-transform: uppercase;
+
+    font-size: clamp(70px, 8vw, 112px);
+
+    line-height: .83;
+
+    letter-spacing: 1px;
+
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--yellow);
+
+    text-shadow: 0 0 30px rgba(255, 212, 0, .18);
+}
+
+.hero p {
+    max-width: 540px;
+
+    color: #aaa;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BOTÕES DO HERO
+========================================================= */
+
+.hero-actions {
+    display: flex;
+
+    gap: 12px;
+
+    margin: 30px 0;
+}
+
+.btn {
+    border: 0;
+
+    border-radius: 10px;
+
+    padding: 15px 21px;
+
+    font-weight: 900;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 20px;
+
+    transition: .25s;
+}
+
+.btn span {
+    font-size: 20px;
+}
+
+.btn-yellow {
+    background: var(--yellow);
+    color: #111;
+
+    box-shadow: 0 10px 35px rgba(255, 212, 0, .12);
+}
+
+.btn-yellow:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 15px 45px rgba(255, 212, 0, .22);
+}
+
+.btn-ghost {
+    border: 1px solid #444;
+
+    color: #eee;
+
+    background: #111;
+}
+
+.btn-ghost:hover {
+    border-color: var(--yellow);
+
+    color: var(--yellow);
+}
+
+
+/* =========================================================
+   MINI PROVA SOCIAL
+========================================================= */
+
+.mini-proof {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.avatars {
+    display: flex;
+}
+
+.avatars span {
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: #222;
+
+    border: 2px solid #111;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--yellow);
+
+    margin-left: -5px;
+}
+
+.mini-proof strong,
+.mini-proof small {
+    display: block;
+}
+
+.mini-proof strong {
+    font-size: 12px;
+}
+
+.mini-proof small {
+    color: #777;
+
+    font-size: 11px;
+
+    margin-top: 2px;
+}
+
+
+/* =========================================================
+   ÁREA DO SNOOPY / HAMBÚRGUER
+========================================================= */
+
+.bite-stage {
+    height: 520px;
+
+    position: relative;
+
+    display: grid;
+
+    place-items: center;
+}
+
+.stage-ring {
+    position: absolute;
+
+    width: 470px;
+    height: 470px;
+
+    border: 1px solid rgba(255, 212, 0, .25);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 100px rgba(255, 212, 0, .08) inset,
+        0 0 70px rgba(255, 212, 0, .06);
+}
+
+.stage-ring:before,
+.stage-ring:after {
+    content: "";
+
+    position: absolute;
+
+    border: 1px solid rgba(255, 212, 0, .12);
+
+    border-radius: 50%;
+
+    inset: 35px;
+}
+
+.stage-ring:after {
+    inset: 75px;
+}
+
+
+/* =========================================================
+   MASCOTE
+========================================================= */
+
+.mascot {
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 5px solid var(--yellow);
+
+    box-shadow: 0 25px 80px #000;
+
+    animation: mascotBite 4.8s ease-in-out infinite;
+
+    z-index: 3;
+}
+
+.mascot img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   HAMBÚRGUER DA ANIMAÇÃO
+========================================================= */
+
+.bite-burger {
+    position: absolute;
+
+    width: 180px;
+    height: 140px;
+
+    right: 15px;
+    top: 185px;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    border: 3px solid var(--yellow);
+
+    box-shadow: 0 20px 40px #000;
+
+    z-index: 5;
+
+    animation: burgerBite 4.8s ease-in-out infinite;
+}
+
+.bite-burger img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   "NHAC!"
+========================================================= */
+
+.bite-word {
+    position: absolute;
+
+    right: 0;
+    top: 100px;
+
+    color: var(--yellow);
+
+    font-family: 'Bebas Neue';
+
+    font-size: 44px;
+
+    transform: rotate(-12deg);
+
+    opacity: 0;
+
+    animation: nhac 4.8s infinite;
+
+    z-index: 7;
+
+    text-shadow: 4px 4px #111;
+}
+
+
+/* =========================================================
+   ETIQUETA DE PREÇO
+========================================================= */
+
+.price-tag {
+    position: absolute;
+
+    left: 35px;
+    bottom: 28px;
+
+    background: #111;
+
+    border: 1px solid #3d3d3d;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    z-index: 7;
+
+    box-shadow: 0 15px 35px #000;
+}
+
+.price-tag small,
+.price-tag strong {
+    display: block;
+}
+
+.price-tag small {
+    font-size: 9px;
+
+    color: #888;
+
+    letter-spacing: 1.5px;
+}
+
+.price-tag strong {
+    color: var(--yellow);
+
+    font-size: 22px;
+
+    margin-top: 2px;
+}
+
+
+/* =========================================================
+   LINHAS DE VELOCIDADE
+========================================================= */
+
+.speed {
+    position: absolute;
+
+    width: 100px;
+    height: 4px;
+
+    background: var(--yellow);
+
+    opacity: .25;
+
+    transform: rotate(-22deg);
+
+    border-radius: 20px;
+}
+
+.speed-one {
+    right: 20px;
+    top: 120px;
+}
+
+.speed-two {
+    right: -10px;
+    top: 145px;
+
+    width: 60px;
+}
+
+.speed-three {
+    left: 40px;
+    top: 165px;
+
+    width: 70px;
+}
+
+
+/* =========================================================
+   GLOW DO HERO
+========================================================= */
+
+.hero-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: .13;
+
+    background: var(--yellow);
+}
+
+.glow-one {
+    width: 280px;
+    height: 280px;
+
+    right: 5%;
+    top: 15%;
+}
+
+.glow-two {
+    width: 180px;
+    height: 180px;
+
+    left: 15%;
+    bottom: 10%;
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+@keyframes mascotBite {
+
+    0%,
+    55%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    61% {
+        transform: translateY(12px) rotate(-2deg);
+    }
+
+    66% {
+        transform: translateY(-2px) rotate(1deg);
+    }
+}
+
+@keyframes burgerBite {
+
+    0%,
+    45% {
+        transform: translate(0, 0) rotate(0) scale(1);
+    }
+
+    58% {
+        transform: translate(-120px, -35px) rotate(-8deg) scale(.9);
+    }
+
+    65% {
+        transform: translate(-135px, -40px) rotate(-10deg) scale(.82);
+    }
+
+    72%,
+    100% {
+        transform: translate(0, 0) rotate(0) scale(1);
+    }
+}
+
+@keyframes nhac {
+
+    0%,
+    56%,
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            rotate(-12deg)
+            scale(.7);
+    }
+
+    61%,
+    68% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(-12deg)
+            scale(1);
+    }
+
+    73% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.hero-marquee {
+    margin-top: 20px;
+
+    border-top: 1px solid rgba(255, 212, 0, .25);
+    border-bottom: 1px solid rgba(255, 212, 0, .25);
+
+    padding: 15px 0;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    background: rgba(0, 0, 0, .35);
+}
+
+.marquee-track {
+    display: inline-flex;
+
+    gap: 28px;
+
+    align-items: center;
+
+    animation: marquee 24s linear infinite;
+
+    color: #ddd;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.marquee-track b {
+    color: var(--yellow);
+}
+
+@keyframes marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* =========================================================
+   BENEFÍCIOS
+========================================================= */
+
+.trust {
+    background: #0b0b0b;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.trust-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.trust-card {
+    padding: 23px 20px;
+
+    display: flex;
+
+    gap: 15px;
+
+    align-items: center;
+
+    border-right: 1px solid var(--line);
+}
+
+.trust-card:last-child {
+    border: 0;
+}
+
+.trust-card > span {
+    font-family: 'Bebas Neue';
+
+    font-size: 28px;
+
+    color: var(--yellow);
+
+    opacity: .8;
+}
+
+.trust-card strong,
+.trust-card small {
+    display: block;
+}
+
+.trust-card strong {
+    font-size: 13px;
+}
+
+.trust-card small {
+    font-size: 11px;
+
+    color: #777;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================================
+   CATEGORIAS
+========================================================= */
+
+.categories {
+    padding: 90px 0 30px;
+}
+
+.section-head,
+.menu-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 20px;
+}
+
+.section-head h2,
+.menu-title h2 {
+    font-family: 'Bebas Neue';
+
+    font-size: 54px;
+
+    line-height: .9;
+
+    margin-top: 6px;
+
+    text-transform: uppercase;
+}
+
+.section-head > p {
+    color: #777;
+
+    font-size: 13px;
+}
+
+.category-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+
+    margin-top: 35px;
+}
+
+.category-card {
+    height: 245px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid #333;
+
+    border-radius: 15px;
+
+    background: #111;
+
+    text-align: left;
+
+    color: #fff;
+
+    padding: 0;
+
+    transition: .3s;
+}
+
+.category-card:hover,
+.category-card.active {
+    border-color: var(--yellow);
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 20px 45px rgba(0, 0, 0, .35);
+}
+
+.cat-photo {
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+
+    background-position: center;
+
+    filter: saturate(.85);
+
+    transition: .5s;
+}
+
+.category-card:hover .cat-photo {
+    transform: scale(1.08);
+}
+
+.category-card:after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            0deg,
+            #080808 5%,
+            rgba(8, 8, 8, .55) 55%,
+            rgba(0, 0, 0, .05)
+        );
+}
+
+.cat-number {
+    position: absolute;
+
+    right: 15px;
+    top: 14px;
+
+    z-index: 2;
+
+    color: var(--yellow);
+
+    font-weight: 900;
+
+    font-size: 11px;
+}
+
+.cat-copy {
+    position: absolute;
+
+    z-index: 3;
+
+    left: 20px;
+    bottom: 18px;
+}
+
+.cat-copy small {
+    display: block;
+
+    color: var(--yellow);
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 900;
+}
+
+.cat-copy strong {
+    display: block;
+
+    font-family: 'Bebas Neue';
+
+    font-size: 31px;
+}
+
+.cat-copy em {
+    font-style: normal;
+
+    font-size: 11px;
+
+    color: #bbb;
+}
+
+
+/* =========================================================
+   SEÇÃO DO CARDÁPIO
+========================================================= */
+
+.menu-section {
+    padding: 55px 0 95px;
+}
+
+.filter-pills {
+    display: flex;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+}
+
+.filter {
+    background: #111;
+
+    color: #888;
+
+    border: 1px solid #292929;
+
+    padding: 9px 12px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+.filter.active,
+.filter:hover {
+    background: var(--yellow);
+
+    border-color: var(--yellow);
+
+    color: #111;
+}
+
+
+/* =========================================================
+   PRODUTOS
+========================================================= */
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-top: 32px;
+}
+
+.product {
+    background: #101010;
+
+    border: 1px solid #292929;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    transition: .3s;
+
+    position: relative;
+}
+
+.product:hover {
+    border-color: #665600;
+
+    transform: translateY(-5px);
+}
+
+
+/* =========================================================
+   IMAGEM DO PRODUTO
+========================================================= */
+
+.product-image {
+    height: 215px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #181818;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .5s;
+}
+
+.product:hover .product-image img {
+    transform: scale(1.07);
+}
+
+
+/* =========================================================
+   BADGE DO PRODUTO
+========================================================= */
+
+.badge {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    background: var(--yellow);
+
+    color: #111;
+
+    border-radius: 5px;
+
+    padding: 5px 7px;
+
+    font-size: 9px;
+
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DO PRODUTO
+========================================================= */
+
+.product-body {
+    padding: 16px 15px 12px;
+
+    min-height: 110px;
+}
+
+.product-body h3 {
+    font-size: 17px;
+}
+
+.product-body p {
+    font-size: 11px;
+
+    color: #777;
+
+    margin-top: 4px;
+
+    line-height: 1.5;
+}
+
+.product-body > strong {
+    display: block;
+
+    color: var(--yellow);
+
+    font-size: 19px;
+
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   BOTÃO ADICIONAR
+========================================================= */
+
+.add {
+    margin: 0 12px 12px;
+
+    width: calc(100% - 24px);
+
+    border: 0;
+
+    background: #1c1c1c;
+
+    color: #fff;
+
+    padding: 11px;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.add span {
+    background: var(--yellow);
+
+    color: #111;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 17px;
+}
+
+.add:hover {
+    background: var(--yellow);
+
+    color: #111;
+}
+
+.add:hover span {
+    background: #111;
+
+    color: var(--yellow);
+}
+
+
+/* =========================================================
+   SEÇÃO DE COMBOS
+========================================================= */
+
+.combo-feature {
+    background:
+        linear-gradient(
+            120deg,
+            #151200,
+            #090909 58%
+        );
+
+    border-top: 1px solid rgba(255, 212, 0, .2);
+    border-bottom: 1px solid rgba(255, 212, 0, .2);
+
+    overflow: hidden;
+}
+
+.combo-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    padding: 85px 0;
+}
+
+.combo-visual {
+    height: 430px;
+
+    position: relative;
+}
+
+.combo-visual > img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+
+    border: 2px solid var(--yellow);
+
+    transform: rotate(-2deg);
+
+    box-shadow:
+        25px 25px 0 rgba(255, 212, 0, .08),
+        0 35px 70px #000;
+}
+
+
+/* =========================================================
+   ADESIVO DO COMBO
+========================================================= */
+
+.combo-sticker {
+    position: absolute;
+
+    left: -25px;
+    top: 20px;
+
+    z-index: 3;
+
+    background: var(--yellow);
+
+    color: #111;
+
+    width: 115px;
+    height: 115px;
+
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+
+    text-align: center;
+
+    font-family: 'Bebas Neue';
+
+    font-size: 20px;
+
+    line-height: .85;
+
+    transform: rotate(-12deg);
+
+    box-shadow: 0 10px 30px #000;
+}
+
+.combo-sticker b {
+    font-size: 26px;
+}
+
+
+/* =========================================================
+   AVISO FLUTUANTE DO COMBO
+========================================================= */
+
+.floating-note {
+    position: absolute;
+
+    right: -20px;
+    bottom: 25px;
+
+    background: #111;
+
+    border: 1px solid #444;
+
+    padding: 14px 18px;
+
+    border-radius: 10px;
+
+    color: var(--yellow);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    transform: rotate(6deg);
+
+    box-shadow: 0 15px 30px #000;
+}
+
+
+/* =========================================================
+   TEXTO DOS COMBOS
+========================================================= */
+
+.combo-copy h2 {
+    font-family: 'Bebas Neue';
+
+    font-size: 72px;
+
+    line-height: .85;
+
+    text-transform: uppercase;
+
+    margin: 15px 0;
+}
+
+.combo-copy h2 span {
+    color: var(--yellow);
+}
+
+.combo-copy p {
+    color: #999;
+
+    max-width: 490px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   SOBRE
+========================================================= */
+
+.about {
+    padding: 95px 0;
+
+    display: grid;
+
+    grid-template-columns: 180px 1fr 180px;
+
+    gap: 40px;
+
+    align-items: center;
+}
+
+.about-logo img {
+    width: 170px;
+    height: 170px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 4px solid var(--yellow);
+}
+
+.about h2 {
+    font-family: 'Bebas Neue';
+
+    font-size: 64px;
+
+    line-height: .88;
+
+    margin: 12px 0;
+
+    text-transform: uppercase;
+}
+
+.about h2 span {
+    color: var(--yellow);
+}
+
+.about p {
+    max-width: 600px;
+
+    color: #888;
+
+    line-height: 1.7;
+}
+
+.about-stat {
+    border-left: 1px solid #333;
+
+    padding-left: 25px;
+}
+
+.about-stat strong {
+    font-family: 'Bebas Neue';
+
+    font-size: 58px;
+
+    color: var(--yellow);
+
+    display: block;
+}
+
+.about-stat small {
+    font-size: 11px;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    border-top: 1px solid #252525;
+
+    padding: 25px 0;
+
+    background: #090909;
+}
+
+.footer-grid {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.footer-grid img {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    border: 2px solid var(--yellow);
+}
+
+.footer-grid strong,
+.footer-grid span {
+    display: block;
+}
+
+.footer-grid strong {
+    font-family: 'Bebas Neue';
+
+    font-size: 22px;
+}
+
+.footer-grid span {
+    font-size: 8px;
+
+    color: var(--yellow);
+
+    font-weight: 900;
+}
+
+.footer-grid p {
+    flex: 1;
+
+    text-align: center;
+
+    color: #777;
+
+    font-family: 'Bebas Neue';
+
+    font-size: 22px;
+}
+
+.footer-grid a {
+    color: var(--yellow);
+
+    font-size: 12px;
+
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   OVERLAY DO CARRINHO
+========================================================= */
+
+.overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .7);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 60;
+
+    transition: .3s;
+}
+
+.overlay.show {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================================================
+   CARRINHO LATERAL
+========================================================= */
+
+.cart {
+    position: fixed;
+
+    right: -520px;
+    top: 0;
+
+    height: 100vh;
+
+    width: min(500px, 100%);
+
+    background: #0c0c0c;
+
+    z-index: 70;
+
+    border-left: 1px solid #333;
+
+    transition: .35s;
+
+    display: flex;
+
+    flex-direction: column;
+
+    box-shadow: -25px 0 80px rgba(0, 0, 0, .5);
+}
+
+.cart.open {
+    right: 0;
+}
+
+
+/* =========================================================
+   CABEÇALHO DO CARRINHO
+========================================================= */
+
+.cart-head {
+    padding: 24px;
+
+    border-bottom: 1px solid #292929;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.cart-head small {
+    color: var(--yellow);
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.cart-head h2 {
+    font-family: 'Bebas Neue';
+
+    font-size: 34px;
+}
+
+.cart-head button {
+    background: none;
+
+    border: 0;
+
+    color: #fff;
+
+    font-size: 32px;
+}
+
+
+/* =========================================================
+   ITENS DO CARRINHO
+========================================================= */
+
+.cart-items {
+    flex: 1;
+
+    overflow: auto;
+
+    padding: 15px 20px;
+}
+
+.empty {
+    text-align: center;
+
+    color: #777;
+
+    padding: 50px 0;
+
+    line-height: 1.7;
+}
+
+.empty span {
+    font-size: 12px;
+}
+
+.cart-row {
+    display: grid;
+
+    grid-template-columns: 70px 1fr auto;
+
+    gap: 12px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #272727;
+}
+
+.cart-row img {
+    width: 70px;
+    height: 70px;
+
+    object-fit: cover;
+
+    border-radius: 9px;
+}
+
+.cart-row h4 {
+    font-size: 13px;
+}
+
+.cart-row p {
+    font-size: 11px;
+
+    color: #777;
+
+    margin-top: 4px;
+}
+
+.cart-row .sub {
+    color: var(--yellow);
+
+    font-weight: 900;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   QUANTIDADE NO CARRINHO
+========================================================= */
+
+.qty {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 9px;
+}
+
+.qty button {
+    width: 25px;
+    height: 25px;
+
+    border: 1px solid #444;
+
+    background: #171717;
+
+    color: #fff;
+
+    border-radius: 5px;
+}
+
+.qty span {
+    font-size: 11px;
+
+    min-width: 16px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   REMOVER ITEM
+========================================================= */
+
+.remove {
+    border: 0;
+
+    background: none;
+
+    color: #777;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   PARTE INFERIOR DO CARRINHO
+========================================================= */
+
+.cart-bottom {
+    padding: 16px 20px;
+
+    background: #090909;
+
+    border-top: 1px solid #292929;
+
+    max-height: 56vh;
+
+    overflow: auto;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.cart-total {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.cart-total strong {
+    font-size: 25px;
+
+    color: var(--yellow);
+}
+
+
+/* =========================================================
+   FORMULÁRIO DO CLIENTE
+========================================================= */
+
+.customer {
+    display: grid;
+
+    gap: 8px;
+}
+
+.customer h3 {
+    font-size: 13px;
+
+    margin-bottom: 2px;
+}
+
+.customer input,
+.customer select,
+.customer textarea {
+    background: #141414;
+
+    color: #fff;
+
+    border: 1px solid #303030;
+
+    border-radius: 7px;
+
+    padding: 10px;
+
+    outline: 0;
+
+    font-size: 12px;
+}
+
+.customer textarea {
+    min-height: 55px;
+
+    resize: vertical;
+}
+
+.customer input:focus,
+.customer select:focus,
+.customer textarea:focus {
+    border-color: var(--yellow);
+}
+
+
+/* =========================================================
+   FINALIZAR PEDIDO
+========================================================= */
+
+.checkout {
+    width: 100%;
+
+    margin-top: 12px;
+
+    border: 0;
+
+    background: var(--green);
+
+    color: #06140b;
+
+    padding: 14px;
+
+    border-radius: 8px;
+
+    font-weight: 900;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   TOAST / AVISO DE PRODUTO ADICIONADO
+========================================================= */
+
+.toast {
+    position: fixed;
+
+    bottom: 25px;
+    left: 50%;
+
+    transform: translate(-50%, 20px);
+
+    background: var(--yellow);
+
+    color: #111;
+
+    padding: 11px 17px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: .25s;
+
+    z-index: 100;
+}
+
+.toast.show {
+    opacity: 1;
+
+    transform: translate(-50%, 0);
+}
+
+
+/* =========================================================
+   ANIMAÇÃO DE REVELAÇÃO AO ROLAR
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity .7s,
+        transform .7s;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   TABLET / TELAS ATÉ 980px
+========================================================= */
+
+/* =========================================================
+   MOBILE — ATÉ 760PX
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  /* ---------- BASE ---------- */
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .wrap {
+    width: min(100% - 32px, 520px);
+  }
+
+
+  /* ---------- HEADER ---------- */
+
+  .header {
+    height: 72px;
+  }
+
+  .nav {
+    height: 72px;
+    gap: 10px;
+  }
+
+  .brand img {
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .cart-pill {
+    margin-left: auto;
+    padding: 10px 13px;
+    gap: 7px;
+    font-size: 12px;
+    border-radius: 12px;
+  }
+
+  .cart-pill .cart-icon {
+    font-size: 15px;
+  }
+
+  .cart-pill b {
+    min-width: 21px;
+    height: 21px;
+    font-size: 11px;
+  }
+
+  .menu-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    padding: 0;
+    font-size: 22px;
+    border-radius: 12px;
+  }
+
+  .mobile-nav {
+    position: absolute;
+    top: 72px;
+    left: 16px;
+    right: 16px;
+    padding: 8px;
+    border-radius: 16px;
+  }
+
+  .mobile-nav a {
+    display: block;
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .hero {
+    min-height: auto;
+    padding: 48px 0 0;
+  }
+
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .hero-copy {
+    text-align: left;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.7px;
+  }
+
+  .hero-copy h1 {
+    margin-top: 12px;
+    font-size: clamp(47px, 13vw, 68px);
+    line-height: .88;
+    letter-spacing: -2px;
+  }
+
+  .hero-copy p {
+    max-width: 100%;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 25px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    min-height: 50px;
+    padding: 13px 12px;
+    font-size: 12px;
+  }
+
+  .mini-proof {
+    margin-top: 22px;
+  }
+
+
+  /* ---------- HERO IMAGEM ---------- */
+
+  .bite-stage {
+    min-height: 330px;
+    height: 330px;
+    margin-top: 5px;
+    transform: scale(.92);
+    transform-origin: center;
+  }
+
+  .stage-ring {
+    width: 285px;
+    height: 285px;
+  }
+
+  .mascot {
+    width: 185px;
+    height: 185px;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .bite-burger {
+    width: 145px;
+    height: 145px;
+    right: 5%;
+    bottom: 24px;
+  }
+
+  .bite-word {
+    right: 7%;
+    bottom: 10px;
+    font-size: 30px;
+  }
+
+  .price-tag {
+    left: 4%;
+    bottom: 22px;
+    padding: 11px 14px;
+  }
+
+  .price-tag small {
+    font-size: 8px;
+  }
+
+  .price-tag strong {
+    font-size: 19px;
+  }
+
+  .hero-marquee {
+    margin-top: 5px;
+  }
+
+  .marquee-track {
+    padding: 14px 0;
+    font-size: 10px;
+  }
+
+
+  /* ---------- BENEFÍCIOS ---------- */
+
+  .trust {
+    padding: 22px 0;
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+  }
+
+  .trust-card {
+    min-height: 88px;
+    padding: 15px 13px;
+  }
+
+  .trust-card span {
+    font-size: 10px;
+  }
+
+  .trust-card strong {
+    font-size: 12px;
+  }
+
+  .trust-card small {
+    font-size: 9px;
+    line-height: 1.35;
+  }
+
+
+  /* ---------- SEÇÕES ---------- */
+
+  .categories,
+  .menu-section,
+  .about {
+    margin-top: 60px;
+  }
+
+  .section-head,
+  .menu-title {
+    display: block;
+  }
+
+  .section-head h2,
+  .menu-title h2 {
+    margin-top: 8px;
+    font-size: 38px;
+    line-height: .95;
+    letter-spacing: -1px;
+  }
+
+  .section-head > p {
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+
+  /* ---------- CATEGORIAS ---------- */
+
+  .category-grid {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 5px 2px 15px;
+    margin-top: 25px;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .category-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-card {
+    flex: 0 0 190px;
+    min-height: 245px;
+
+    scroll-snap-align: start;
+
+    border-radius: 18px;
+  }
+
+  .cat-photo {
+    min-height: 245px;
+  }
+
+  .cat-copy {
+    padding: 18px;
+  }
+
+  .cat-copy strong {
+    font-size: 22px;
+  }
+
+  .cat-copy em {
+    font-size: 10px;
+  }
+
+  .cat-number {
+    top: 13px;
+    left: 13px;
+    font-size: 10px;
+  }
+
+
+  /* ---------- FILTROS ---------- */
+
+  .filter-pills {
+    display: flex;
+    gap: 8px;
+
+    overflow-x: auto;
+
+    margin-top: 22px;
+    padding-bottom: 7px;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .filter-pills::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter {
+    flex: 0 0 auto;
+    min-height: 38px;
+    padding: 9px 15px;
+    font-size: 11px;
+    border-radius: 999px;
+  }
+
+
+  /* ---------- PRODUTOS ---------- */
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 22px;
+  }
+
+  .product {
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .product-image {
+    height: 230px;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .product-body {
+    padding: 17px 17px 13px;
+    gap: 10px;
+  }
+
+  .product-body h3 {
+    font-size: 21px;
+  }
+
+  .product-body p {
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .product-body > strong {
+    white-space: nowrap;
+    font-size: 17px;
+  }
+
+  .product .add {
+    width: calc(100% - 34px);
+    margin: 0 17px 17px;
+    min-height: 48px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+
+
+  /* ---------- COMBO ---------- */
+
+  .combo-feature {
+    margin-top: 70px;
+    padding: 55px 0;
+  }
+
+  .combo-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .combo-visual {
+    min-height: 300px;
+  }
+
+  .combo-visual img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .combo-sticker {
+    top: 14px;
+    left: 14px;
+    padding: 10px 13px;
+    font-size: 10px;
+  }
+
+  .floating-note {
+    right: 12px;
+    bottom: 12px;
+    padding: 10px 12px;
+    font-size: 9px;
+  }
+
+  .combo-copy h2 {
+    margin-top: 10px;
+    font-size: 43px;
+    line-height: .92;
+    letter-spacing: -1px;
+  }
+
+  .combo-copy p {
+    margin-top: 17px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .combo-copy .btn {
+    width: 100%;
+    min-height: 52px;
+    margin-top: 22px;
+  }
+
+
+  /* ---------- SOBRE ---------- */
+
+  .about {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-bottom: 65px;
+  }
+
+  .about-logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .about h2 {
+    margin-top: 10px;
+    font-size: 40px;
+    line-height: .95;
+  }
+
+  .about p {
+    margin-top: 17px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .about-stat {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .about-stat strong {
+    font-size: 38px;
+  }
+
+
+  /* ---------- FOOTER ---------- */
+
+  footer {
+    padding: 35px 0;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .footer-grid img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .footer-grid p {
+    grid-column: 1 / -1;
+    font-size: 12px;
+  }
+
+  .footer-grid a {
+    grid-column: 1 / -1;
+    width: 100%;
+    text-align: center;
+    padding: 13px;
+  }
+
+
+  /* ---------- CARRINHO ---------- */
+
+  .cart {
+    width: 100%;
+    max-width: 100%;
+    right: -100%;
+    border-radius: 0;
+  }
+
+  .cart.open {
+    right: 0;
+  }
+
+  .cart-head {
+    padding: 18px 18px 15px;
+  }
+
+  .cart-head h2 {
+    font-size: 28px;
+  }
+
+  .cart-head button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .cart-items {
+    padding: 15px 16px;
+  }
+
+  .cart-row {
+    position: relative;
+    grid-template-columns: 70px 1fr;
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  .cart-row img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .cart-row h4 {
+    font-size: 14px;
+  }
+
+  .cart-row p {
+    font-size: 11px;
+  }
+
+  .cart-row .remove {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 4px;
+    font-size: 10px;
+  }
+
+  .cart-bottom {
+    padding: 15px 16px 20px;
+  }
+
+  .cart-total {
+    margin-bottom: 15px;
+  }
+
+  .cart-total strong {
+    font-size: 22px;
+  }
+
+  .customer {
+    padding-top: 5px;
+  }
+
+  .customer h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .customer input,
+  .customer select,
+  .customer textarea {
+    min-height: 45px;
+    padding: 12px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .customer textarea {
+    min-height: 75px;
+  }
+
+  .checkout {
+    min-height: 52px;
+    margin-top: 13px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+
+
+  /* ---------- TOAST ---------- */
+
+  .toast {
+    left: 16px;
+    right: 16px;
+    bottom: 18px;
+    width: auto;
+    text-align: center;
+  }
+}
+
+
+/* =========================================================
+   MOBILE PEQUENO — ATÉ 420PX
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .wrap {
+    width: min(100% - 24px, 520px);
+  }
+
+  .header {
+    height: 68px;
+  }
+
+  .nav {
+    height: 68px;
+  }
+
+  .brand img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .cart-pill {
+    padding: 9px 10px;
+  }
+
+  .cart-pill span:nth-child(2) {
+    display: none;
+  }
+
+  .menu-mobile {
+    width: 41px;
+    height: 41px;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    padding-top: 38px;
+  }
+
+  .hero-copy h1 {
+    font-size: 45px;
+  }
+
+  .hero-copy p {
+    font-size: 14px;
+  }
+
+  .hero-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .bite-stage {
+    min-height: 290px;
+    height: 290px;
+    transform: scale(.84);
+    margin-top: -5px;
+    margin-bottom: -20px;
+  }
+
+  .stage-ring {
+    width: 260px;
+    height: 260px;
+  }
+
+  .mascot {
+    width: 165px;
+    height: 165px;
+  }
+
+  .bite-burger {
+    width: 125px;
+    height: 125px;
+    right: 1%;
+    bottom: 18px;
+  }
+
+  .bite-word {
+    right: 4%;
+    bottom: 2px;
+    font-size: 26px;
+  }
+
+  .price-tag {
+    left: 1%;
+    bottom: 15px;
+  }
+
+
+  /* BENEFÍCIOS */
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-card {
+    min-height: 72px;
+  }
+
+
+  /* TÍTULOS */
+
+  .section-head h2,
+  .menu-title h2 {
+    font-size: 34px;
+  }
+
+  .combo-copy h2 {
+    font-size: 38px;
+  }
+
+  .about h2 {
+    font-size: 36px;
+  }
+
+
+  /* CATEGORIAS */
+
+  .category-card {
+    flex-basis: 175px;
+    min-height: 225px;
+  }
+
+  .cat-photo {
+    min-height: 225px;
+  }
+
+
+  /* PRODUTOS */
+
+  .product-image {
+    height: 215px;
+  }
+
+
+  /* COMBO */
+
+  .combo-visual,
+  .combo-visual img {
+    min-height: 250px;
+    height: 250px;
+  }
+}@media (max-width: 980px) {
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .menu-mobile {
+        display: block;
+
+        margin-left: auto;
+
+        border: 1px solid #333;
+
+        background: #111;
+
+        color: #fff;
+
+        border-radius: 8px;
+
+        padding: 9px;
+    }
+
+    .mobile-nav {
+        display: none;
+
+        padding: 12px 4%;
+
+        border-top: 1px solid #222;
+
+        background: #090909;
+    }
+
+    .mobile-nav.open {
+        display: grid;
+    }
+
+    .mobile-nav a {
+        padding: 10px;
+
+        color: #bbb;
+    }
+
+    .hero {
+        padding-top: 55px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-copy {
+        text-align: center;
+    }
+
+    .hero-copy p {
+        margin: auto;
+    }
+
+    .hero-actions,
+    .mini-proof {
+        justify-content: center;
+    }
+
+    .bite-stage {
+        height: 430px;
+    }
+
+    .category-grid,
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trust-card:nth-child(2) {
+        border-right: 0;
+    }
+
+    .trust-card:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--line);
+    }
+
+    .combo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        grid-template-columns: 130px 1fr;
+    }
+
+    .about-stat {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   CELULARES ATÉ 600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .nav {
+        height: 68px;
+    }
+
+    .brand {
+        width: 62px;
+        height: 62px;
+
+        margin-top: 16px;
+    }
+
+    .cart-pill span:nth-child(2) {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 67px;
+    }
+
+    .bite-stage {
+        height: 350px;
+    }
+
+    .stage-ring {
+        width: 320px;
+        height: 320px;
+    }
+
+    .mascot {
+        width: 225px;
+        height: 225px;
+    }
+
+    .bite-burger {
+        width: 125px;
+        height: 95px;
+
+        right: 8px;
+        top: 125px;
+    }
+
+    .price-tag {
+        left: 0;
+        bottom: 0;
+    }
+
+    .bite-word {
+        right: 4px;
+        top: 75px;
+
+        font-size: 32px;
+    }
+
+    .category-grid,
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-head,
+    .menu-title {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .filter-pills {
+        justify-content: flex-start;
+    }
+
+    .section-head h2,
+    .menu-title h2 {
+        font-size: 44px;
+    }
+
+    .combo-grid {
+        padding: 60px 0;
+    }
+
+    .combo-visual {
+        height: 300px;
+    }
+
+    .combo-copy h2 {
+        font-size: 56px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .about-logo img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .about p {
+        margin: auto;
+    }
+
+    .footer-grid {
+        flex-wrap: wrap;
+    }
+
+    .footer-grid p {
+        order: 5;
+
+        width: 100%;
+    }
+
+    .trust-card {
+        padding: 18px 10px;
+    }
+
+    .trust-card small {
+        font-size: 10px;
+    }
+}
